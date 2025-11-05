@@ -1,0 +1,15 @@
+{
+  "uid": "band_to_venue",
+  "type": "app-object-association",
+  "config": {
+    "firstObjectType": "band",
+    "secondObjectType": "venue",
+    "labels": [
+      {
+        "name": "default",
+        "firstObjectTypeLabel": "Venues",
+        "secondObjectTypeLabel": "Bands"
+      }
+    ]
+  }
+}

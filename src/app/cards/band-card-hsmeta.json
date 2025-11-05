@@ -1,0 +1,12 @@
+{
+  "uid": "band_info_card",
+  "type": "card",
+  "config": {
+    "name": "Band Info",
+    "description": "Displays band information, music player, and social media links",
+    "location": "crm.record.tab",
+    "entrypoint": "/app/cards/band-card.jsx",
+    "objectTypes": ["band"]
+  }
+}
+

@@ -2,19 +2,27 @@
   "uid": "get_started_app",
   "type": "app",
   "config": {
-    "description": "A basic static token app for testing",
-    "name": "My Get Started app",
+    "description": "Track local bands, venues, and their connections in the music scene",
+    "name": "Band Tracker",
     "distribution": "marketplace",
     "auth": {
       "type": "oauth",
       "requiredScopes": [
         "oauth",
         "crm.objects.contacts.read",
-        "crm.objects.contacts.write"
+        "crm.objects.contacts.write",
+        "crm.app.objects.a23384795_venue.create",
+        "crm.app.objects.a23384795_venue.edit",
+        "crm.app.objects.a23384795_venue.view",
+        "crm.app.schemas.a23384795_venue.read",
+        "crm.app.objects.a23384795_band.create",
+        "crm.app.objects.a23384795_band.edit",
+        "crm.app.objects.a23384795_band.view",
+        "crm.app.schemas.a23384795_band.read"
       ],
       "optionalScopes": [],
       "conditionallyRequiredScopes": [],
-      "redirectUrls": ["http://localhost:3000/oauth"]
+      "redirectUrls": ["https://hubspot-bands-oauth.vercel.app/oauth-callback"]
     },
     "permittedUrls": {
       "fetch": ["https://api.hubapi.com"],

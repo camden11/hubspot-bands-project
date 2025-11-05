@@ -1,0 +1,82 @@
+{
+  "uid": "venue",
+  "type": "app-object",
+  "config": {
+    "name": "VENUE",
+    "singularForm": "Venue",
+    "pluralForm": "Venues",
+    "description": "Local venues where bands perform",
+    "primaryDisplayLabelPropertyName": "name",
+    "secondaryDisplayLabelPropertyNames": ["city", "capacity"],
+    "settings": {
+      "hasRecordPage": true,
+      "allowsUserCreatedRecords": true,
+      "hasEngagements": false
+    },
+    "properties": [
+      {
+        "name": "name",
+        "label": "Venue Name",
+        "type": "string",
+        "fieldType": "text",
+        "description": "The name of the venue"
+      },
+      {
+        "name": "city",
+        "label": "City",
+        "type": "string",
+        "fieldType": "text",
+        "description": "City where the venue is located"
+      },
+      {
+        "name": "neighborhood",
+        "label": "Neighborhood",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Neighborhood or district"
+      },
+      {
+        "name": "address",
+        "label": "Address",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Street address of the venue"
+      },
+      {
+        "name": "capacity",
+        "label": "Capacity",
+        "type": "number",
+        "fieldType": "number",
+        "description": "Maximum capacity of the venue"
+      },
+      {
+        "name": "website",
+        "label": "Website",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Venue's website"
+      },
+      {
+        "name": "instagram",
+        "label": "Instagram Handle",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Instagram handle (without @)"
+      },
+      {
+        "name": "typical_ticket_price",
+        "label": "Typical Ticket Price",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Typical ticket price range (e.g., '$10-15')"
+      },
+      {
+        "name": "notes",
+        "label": "Notes",
+        "type": "string",
+        "fieldType": "textarea",
+        "description": "Additional notes about the venue"
+      }
+    ]
+  }
+}

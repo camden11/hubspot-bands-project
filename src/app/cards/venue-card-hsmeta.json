@@ -1,0 +1,12 @@
+{
+  "uid": "venue_info_card",
+  "type": "card",
+  "config": {
+    "name": "Venue Info",
+    "description": "Displays venue information and details",
+    "location": "crm.record.tab",
+    "entrypoint": "/app/cards/venue-card.jsx",
+    "objectTypes": ["venue"]
+  }
+}
+

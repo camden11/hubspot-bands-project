@@ -1,0 +1,82 @@
+{
+  "uid": "band",
+  "type": "app-object",
+  "config": {
+    "name": "BAND",
+    "singularForm": "Band",
+    "pluralForm": "Bands",
+    "description": "Local bands to track for shows and collaborations",
+    "primaryDisplayLabelPropertyName": "name",
+    "secondaryDisplayLabelPropertyNames": ["genre", "city"],
+    "settings": {
+      "hasRecordPage": true,
+      "allowsUserCreatedRecords": true,
+      "hasEngagements": false
+    },
+    "properties": [
+      {
+        "name": "name",
+        "label": "Band Name",
+        "type": "string",
+        "fieldType": "text",
+        "description": "The name of the band"
+      },
+      {
+        "name": "genre",
+        "label": "Genre",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Musical genre(s)"
+      },
+      {
+        "name": "city",
+        "label": "City",
+        "type": "string",
+        "fieldType": "text",
+        "description": "City where the band is based"
+      },
+      {
+        "name": "bandcamp_url",
+        "label": "Bandcamp URL",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Link to the band's Bandcamp page"
+      },
+      {
+        "name": "instagram",
+        "label": "Instagram Handle",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Instagram handle (without @)"
+      },
+      {
+        "name": "facebook",
+        "label": "Facebook URL",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Facebook page URL"
+      },
+      {
+        "name": "spotify_url",
+        "label": "Spotify URL",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Spotify artist URL"
+      },
+      {
+        "name": "website",
+        "label": "Website",
+        "type": "string",
+        "fieldType": "text",
+        "description": "Band's official website"
+      },
+      {
+        "name": "notes",
+        "label": "Notes",
+        "type": "string",
+        "fieldType": "textarea",
+        "description": "Additional notes about the band"
+      }
+    ]
+  }
+}
