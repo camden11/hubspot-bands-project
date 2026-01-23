@@ -13,5 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: HubSpot Project Action
-        uses: HubSpot/hubspot-project-actions@v1.0.0
+        uses: HubSpot/hubspot-project-actions@v1
+        with:
+          project_dir: "./"
 
