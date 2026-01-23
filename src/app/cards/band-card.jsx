@@ -9,8 +9,8 @@ import {
   Heading,
   Tag,
   hubspot,
-  LoadingSpinner,
-  EmptyState
+  EmptyState,
+  LoadingSpinner
 } from "@hubspot/ui-extensions";
 
 hubspot.extend(({ context, actions }) => (
@@ -24,23 +24,43 @@ hubspot.extend(({ context, actions }) => (
 const Extension = ({ context, fetchProperties, openIframe }) => {
   const [bandData, setBandData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const APP_ID = "23384795";
 
   useEffect(() => {
-    // Fetch band properties when component mounts
     fetchProperties([
-      "name",
-      "genre",
-      "city",
-      "bandcamp_url",
-      "instagram",
-      "facebook",
-      "spotify_url",
-      "website",
-      "notes"
-    ]).then((properties) => {
-      setBandData(properties);
-      setLoading(false);
-    });
+      "hs_object_id",
+      `a${APP_ID}_name`,
+      `a${APP_ID}_genre`,
+      `a${APP_ID}_city`,
+      `a${APP_ID}_bandcamp_url`,
+      `a${APP_ID}_instagram`,
+      `a${APP_ID}_facebook`,
+      `a${APP_ID}_spotify_url`,
+      `a${APP_ID}_website`,
+      `a${APP_ID}_notes`
+    ])
+      .then((properties) => {
+        const normalizedData = {
+          name: properties[`a${APP_ID}_name`],
+          genre: properties[`a${APP_ID}_genre`],
+          city: properties[`a${APP_ID}_city`],
+          bandcamp_url: properties[`a${APP_ID}_bandcamp_url`],
+          instagram: properties[`a${APP_ID}_instagram`],
+          facebook: properties[`a${APP_ID}_facebook`],
+          spotify_url: properties[`a${APP_ID}_spotify_url`],
+          website: properties[`a${APP_ID}_website`],
+          notes: properties[`a${APP_ID}_notes`]
+        };
+        setBandData(normalizedData);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching properties:", err);
+        setError(err.message || "Failed to load band data");
+        setLoading(false);
+      });
   }, [fetchProperties]);
 
   const handleBandcampClick = () => {
@@ -65,6 +85,14 @@ const Extension = ({ context, fetchProperties, openIframe }) => {
         <LoadingSpinner />
         <Text>Loading band info...</Text>
       </Flex>
+    );
+  }
+
+  if (error) {
+    return (
+      <EmptyState title="Error loading band" layout="vertical">
+        <Text>{error}</Text>
+      </EmptyState>
     );
   }
 

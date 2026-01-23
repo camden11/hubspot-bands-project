@@ -6,7 +6,20 @@
     "description": "Displays band information, music player, and social media links",
     "location": "crm.record.tab",
     "entrypoint": "/app/cards/band-card.jsx",
-    "objectTypes": ["band"]
+    "objectTypes": ["band"],
+    "dataFetch": {
+      "properties": [
+        "name",
+        "genre",
+        "city",
+        "bandcamp_url",
+        "instagram",
+        "facebook",
+        "spotify_url",
+        "website",
+        "notes"
+      ]
+    }
   }
 }
 
